@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CartWidget from './CartWidget'
+import CartWidget from '../CartWidget/CartWidget'
 
 function NavBar() {
   const [openmenu, setOpenmenu] = useState(false);
@@ -25,7 +25,7 @@ function NavBar() {
                 </svg>
               </button>
             </div> 
-              <img className="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"/>
+              <img className="hidden h-8 w-auto lg:block" src="/assets/logo.png" alt="Company"/>
             </div>
             <div className="hidden lg:ml-6 lg:flex lg:space-x-8"> 
               <a href="#" className="nav__link">Tecnología</a>

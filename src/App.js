@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
-
+import { BrowserRouter } from 'react-router-dom';
 function App() {
   const [products, setProducts]=useState([]);
 
@@ -17,12 +17,12 @@ function App() {
     
 
   return (
-    <div className="App min-w-sm">
+    <BrowserRouter> 
       <NavBar/>
       <main className='py-10 bg-gray-100'> 
           <ItemListContainer products={products}/> 
-      </main> 
-    </div>
+      </main>  
+    </BrowserRouter>
   );
 }
 

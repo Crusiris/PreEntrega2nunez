@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CartWidget from '../CartWidget/CartWidget'
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   const [openmenu, setOpenmenu] = useState(false);
@@ -28,10 +29,10 @@ function NavBar() {
               <img className="hidden h-8 w-auto lg:block" src="/assets/logo.png" alt="Company"/>
             </div>
             <div className="hidden lg:ml-6 lg:flex lg:space-x-8"> 
-              <a href="#" className="nav__link">Tecnología</a>
-              <a href="#" className="nav__link">Electrohogar</a>
-              <a href="#" className="nav__link">Deportes</a>
-              <a href="#" className="nav__link">Belleza</a>
+              <NavLink to="/tecnologia" className="nav__link">Tecnología</NavLink>
+              <NavLink to="/electrohogar" className="nav__link">Electrohogar</NavLink>
+              <NavLink to="/deportes" className="nav__link">Deportes</NavLink>
+              <NavLink to="/belleza" className="nav__link">Belleza</NavLink>
             </div>
           </div>
           <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
@@ -60,10 +61,10 @@ function NavBar() {
         (
           <nav className="lg:hidden" id="mobile-menu">
             <div className="space-y-1 pb-3 pt-2"> 
-              <a href="#" className="nav__link--mob">Tecnología</a>
-              <a href="#" className="nav__link--mob">Electrohogar</a>
-              <a href="#" className="nav__link--mob">Deportes</a>
-              <a href="#" className="nav__link--mob">Belleza</a>
+             <NavLink to="/tecnologia" className="nav__link--mob">Tecnología</NavLink>
+              <NavLink to="/electrohogar" className="nav__link--mob">Electrohogar</NavLink>
+              <NavLink to="/deportes" className="nav__link--mob">Deportes</NavLink>
+              <NavLink to="/belleza" className="nav__link--mob">Belleza</NavLink> 
             </div> 
         </nav>
         )  

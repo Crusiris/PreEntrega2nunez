@@ -4,8 +4,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 
 function ItemDetailContainer() {
-  const [product, setProduct] = useState([]);   
-  const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState([]);    
   const params = useParams();
 
   useEffect(() => {
@@ -17,20 +16,7 @@ function ItemDetailContainer() {
    
    fetchData();
   }, [params]);
-
-  const handleAddQuantity = ()=>{ 
-    let stock = 10;
-    if(quantity < stock){
-      setQuantity(quantity + 1)
-    }
-  }
-
-  const handleRemoveQuantity = ()=>{ 
-    if(quantity > 1){
-      setQuantity(quantity - 1)
-    }
-  }
-  
+ 
   return ( 
     <section className='grid grid-cols-1 lg:grid-cols-12'>
       <ItemDetail product={product}/> 

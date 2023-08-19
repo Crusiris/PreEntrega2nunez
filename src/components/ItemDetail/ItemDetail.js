@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { CartContext } from "../../context/CartContextProvider";
 
 function ItemDetail({ product }) {
+  const { addToCart } = useContext(CartContext);
   const [selectQuantity, setSelectQuantity] = useState(0);
   const [showItemCount, setItemCount] = useState(true);
 
   const handleAddToCart = (quantity) => {
     setSelectQuantity(quantity);
     setItemCount(false);
+    addToCart(product, quantity);
   };
 
   return (

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import NavBar from "./components/NavBar/NavBar";
-import CartContextProvider from "./context/CartContext";
+import CartContextProvider from "./context/CartContextProvider";
 
 function App() {
   const [products, setProducts] = useState([]);

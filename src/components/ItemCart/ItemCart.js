@@ -1,6 +1,19 @@
-import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContextProvider";
 
 function ItemCart({ product }) {
+  const { removeItem } = useContext(CartContext);
+
+  const handleDeleteProduct = () => {
+    const {
+      product: { id },
+    } = product || { product: { id: null } };
+
+    if (id) {
+      removeItem(id);
+    }
+  };
+
   return (
     <li className="flex py-6">
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -24,6 +37,7 @@ function ItemCart({ product }) {
 
           <div className="flex">
             <button
+              onClick={handleDeleteProduct}
               type="button"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >

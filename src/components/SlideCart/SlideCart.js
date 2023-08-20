@@ -78,7 +78,7 @@ function SlideCart({ open, handleCloseCart }) {
 
                       <div className="mt-8">
                         <div className="flow-root">
-                          {cartList.length ? (
+                          {cartList.length > 0 ? (
                             <ul
                               role="list"
                               className="-my-6 divide-y divide-gray-200"

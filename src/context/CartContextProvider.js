@@ -30,8 +30,27 @@ const CartContextProvider = ({ children }) => {
     setTotalPurchase(totalPrice);
   };
 
-  const removeItem = () => {};
+  const removeItem = (id) => {
+    const existingItem = cartList.find((e) => e.product.id === id);
+    let newproducts;
+    if (existingItem && existingItem.quantity > 1) {
+      newproducts = cartList.map((e) => {
+        if (e.product.id === id) {
+          e.quantity = e.quantity - 1;
+        }
+        return e;
+      });
+    } else {
+      newproducts = cartList.filter((product) => {
+        return product.product.id != id ? product : null;
+      });
+    }
+    setCartList(newproducts);
+  };
+
   const clearCart = () => {};
+
+  const getQuantity = () => {};
 
   return (
     <CartProvider

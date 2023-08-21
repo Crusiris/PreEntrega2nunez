@@ -1,16 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContextProvider";
 
 function ItemDetail({ product }) {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, getQuantity, cartList } = useContext(CartContext);
   const [selectQuantity, setSelectQuantity] = useState(0);
   const [showItemCount, setItemCount] = useState(true);
 
+  useEffect(() => {
+    getQuantity();
+  }, [cartList]);
+
   const handleAddToCart = (quantity) => {
     setSelectQuantity(quantity);
-    setItemCount(false);
     addToCart(product, quantity);
+    setItemCount(false);
   };
 
   return (

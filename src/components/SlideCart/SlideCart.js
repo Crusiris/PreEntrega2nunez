@@ -4,9 +4,14 @@ import { CartContext } from "../../context/CartContextProvider";
 import ItemCart from "../ItemCart/ItemCart";
 
 function SlideCart({ open, handleCloseCart }) {
-  const { cartList } = useContext(CartContext);
+  const { cartList, clearCart, totalQuantity, totalpurchase } =
+    useContext(CartContext);
   const handleClose = () => {
     handleCloseCart(false);
+  };
+
+  const handleCleanCart = () => {
+    clearCart();
   };
 
   return (
@@ -41,7 +46,7 @@ function SlideCart({ open, handleCloseCart }) {
                     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-900">
-                          Shopping cart
+                          Carrito de compra
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
@@ -91,7 +96,9 @@ function SlideCart({ open, handleCloseCart }) {
                               ))}
                             </ul>
                           ) : (
-                            <p>Nohay productos ahora</p>
+                            <div className="text-center h-48  flex items-center justify-center font-medium text-lg">
+                              <p>No existen productos aún </p>
+                            </div>
                           )}
                         </div>
                       </div>
@@ -100,12 +107,19 @@ function SlideCart({ open, handleCloseCart }) {
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>$262.00</p>
+                        <p>{totalpurchase}</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className="mt-6">
+                        <button
+                          onClick={handleCleanCart}
+                          href="#"
+                          className="justify-center  text-base font-medium shadow-sm btn__primary mb-4 w-full"
+                        >
+                          Limpiar carrito
+                        </button>
                         <a
                           href="#"
                           className="justify-center  text-base font-medium shadow-sm btn__primary "

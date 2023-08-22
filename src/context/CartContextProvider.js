@@ -6,7 +6,7 @@ const CartProvider = CartContext.Provider;
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(0);
-  const [totalpurchase, setTotalPurchase] = useState(0);
+  const [totalPurchase, setTotalPurchase] = useState(0);
 
   const addToCart = (product, quantity) => {
     const existingItem = cartList.find((e) => e.product.id === product.id);
@@ -29,6 +29,13 @@ const CartContextProvider = ({ children }) => {
       return total + e.quantity;
     }, 0);
     setTotalQuantity(totalQty);
+  };
+
+  const getTotalPurchase = () => {
+    const totalPrice = cartList.reduce((total, e) => {
+      return total + e.product.price;
+    }, 0);
+    setTotalPurchase(totalPrice);
   };
 
   const removeItem = (id) => {
@@ -58,11 +65,12 @@ const CartContextProvider = ({ children }) => {
       value={{
         cartList,
         totalQuantity,
-        totalpurchase,
+        totalPurchase,
         addToCart,
         removeItem,
         clearCart,
         getQuantity,
+        getTotalPurchase,
       }}
     >
       {children}

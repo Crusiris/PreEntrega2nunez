@@ -1,11 +1,16 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CartContext } from "../../context/CartContextProvider";
 import ItemCart from "../ItemCart/ItemCart";
 
 function SlideCart({ open, handleCloseCart }) {
-  const { cartList, clearCart, totalQuantity, totalpurchase } =
+  const { cartList, clearCart, totalPurchase, getTotalPurchase } =
     useContext(CartContext);
+
+  useEffect(() => {
+    getTotalPurchase();
+  }, [cartList]);
+
   const handleClose = () => {
     handleCloseCart(false);
   };
@@ -107,7 +112,7 @@ function SlideCart({ open, handleCloseCart }) {
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>{totalpurchase}</p>
+                        <p>{totalPurchase}</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">
                         Shipping and taxes calculated at checkout.

@@ -3,12 +3,14 @@ import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContextProvider";
 
 function ItemDetail({ product }) {
-  const { addToCart, getQuantity, cartList } = useContext(CartContext);
+  const { addToCart, getQuantity, cartList, getTotalPurchase } =
+    useContext(CartContext);
   const [selectQuantity, setSelectQuantity] = useState(0);
   const [showItemCount, setItemCount] = useState(true);
 
   useEffect(() => {
     getQuantity();
+    getTotalPurchase();
   }, [cartList]);
 
   const handleAddToCart = (quantity) => {

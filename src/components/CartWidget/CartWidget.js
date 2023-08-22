@@ -5,7 +5,6 @@ import { CartContext } from "../../context/CartContextProvider";
 const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext);
   const [open, setOpen] = useState(false);
-  console.log(totalQuantity);
   const handleOpenCart = () => {
     setOpen(true);
   };

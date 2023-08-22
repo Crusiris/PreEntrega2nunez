@@ -17,7 +17,6 @@ function ItemCount({ onAdd }) {
   };
 
   const handleShopProduct = () => {
-    console.log(`hola desde itemcount ${quantity}`);
     onAdd(quantity);
   };
 

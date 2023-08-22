@@ -2,11 +2,12 @@ import { Fragment, useContext, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CartContext } from "../../context/CartContextProvider";
 import ItemCart from "../ItemCart/ItemCart";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SlideCart({ open, handleCloseCart }) {
   const { cartList, clearCart, totalPurchase, getTotalPurchase } =
     useContext(CartContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getTotalPurchase();
@@ -18,6 +19,9 @@ function SlideCart({ open, handleCloseCart }) {
 
   const handleCleanCart = () => {
     clearCart();
+  };
+  const handleBuy = () => {
+    navigate("/cart");
   };
 
   return (
@@ -125,12 +129,12 @@ function SlideCart({ open, handleCloseCart }) {
                         >
                           Limpiar carrito
                         </button>
-                        <NavLink
-                          to="cart"
-                          className="justify-center  text-base font-medium shadow-sm btn__primary cursor-pointer"
+                        <button
+                          onClick={handleBuy}
+                          className="justify-center w-full text-base font-medium shadow-sm btn__primary cursor-pointer"
                         >
-                          Ir al carrito
-                        </NavLink>
+                          Ver carrito
+                        </button>
                       </div>
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>

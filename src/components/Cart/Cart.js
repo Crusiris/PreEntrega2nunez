@@ -3,13 +3,10 @@ import CartContextProvider from "../../context/CartContextProvider";
 
 function Cart() {
   const { cart } = useContext(CartContextProvider);
+  console.log("hola muno");
   return (
     <>
-      {cart.length ? (
-        <ul role="list" className="-my-6 divide-y divide-gray-200"></ul>
-      ) : (
-        <p>Nohay productos ahora</p>
-      )}
+      <h1>hola mundo</h1>
     </>
   );
 }

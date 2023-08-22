@@ -2,6 +2,7 @@ import { Fragment, useContext, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CartContext } from "../../context/CartContextProvider";
 import ItemCart from "../ItemCart/ItemCart";
+import { NavLink } from "react-router-dom";
 
 function SlideCart({ open, handleCloseCart }) {
   const { cartList, clearCart, totalPurchase, getTotalPurchase } =
@@ -120,17 +121,16 @@ function SlideCart({ open, handleCloseCart }) {
                       <div className="mt-6">
                         <button
                           onClick={handleCleanCart}
-                          href="#"
                           className="justify-center  text-base font-medium shadow-sm btn__primary mb-4 w-full"
                         >
                           Limpiar carrito
                         </button>
-                        <a
-                          href="#"
-                          className="justify-center  text-base font-medium shadow-sm btn__primary "
+                        <NavLink
+                          to="cart"
+                          className="justify-center  text-base font-medium shadow-sm btn__primary cursor-pointer"
                         >
-                          Ir a pagar
-                        </a>
+                          Ir al carrito
+                        </NavLink>
                       </div>
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>

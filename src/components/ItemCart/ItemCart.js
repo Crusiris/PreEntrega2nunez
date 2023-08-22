@@ -39,7 +39,7 @@ function ItemCart({ product }) {
             <button
               onClick={handleDeleteProduct}
               type="button"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="font-medium text-green-600 hover:text-green-500"
             >
               Remove
             </button>

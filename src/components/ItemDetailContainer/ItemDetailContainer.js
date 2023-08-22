@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from 'react' 
-import { useParams } from 'react-router-dom';
-import ItemDetail from '../ItemDetail/ItemDetail';
-
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { getProductById } from "../../utils";
 
 function ItemDetailContainer() {
-  const [product, setProduct] = useState([]);    
+  const [product, setProduct] = useState([]);
   const params = useParams();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch(`https://fakestoreapi.com/products/${params.id}`)
-      .then(res=>res.json());
-      setProduct(data);
-    }
-   
-   fetchData();
+    getProductById(`${params.id}`)
+      .then((res) => {
+        setProduct(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [params]);
- 
-  return ( 
-    <section className='grid grid-cols-1 lg:grid-cols-12'>
-      <ItemDetail product={product}/> 
-    </section> 
-  )
+
+  return (
+    <section className="grid grid-cols-1 lg:grid-cols-12">
+      <ItemDetail product={product} />
+    </section>
+  );
 }
 
-export default ItemDetailContainer
-
+export default ItemDetailContainer;

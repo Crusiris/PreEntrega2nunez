@@ -13,7 +13,7 @@ ReactEcommerce: Plataforma de Comercio Electrónico Desarrollada en React
 
 ## Sitio
 
-![GIF]("./public/gif.mp4")
+![GIF]("./public/assets/gifapp.gif")
 
 ## Características
 

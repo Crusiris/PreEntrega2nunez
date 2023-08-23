@@ -13,7 +13,7 @@ ReactEcommerce: Plataforma de Comercio Electrónico Desarrollada en React
 
 ## Sitio
 
-![GIF]("./public/assets/gifapp.gif")
+![GIF]("https://github.com/Crusiris/PreEntrega3nunez/blob/main/public/assets/gifapp.gif")
 
 ## Características
 

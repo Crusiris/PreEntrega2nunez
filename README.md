@@ -1,12 +1,20 @@
+<img src="./public/assets/img/header.png">
+
+
 # Ecommerce (Coderhouse)
 
 ReactEcommerce: Plataforma de Comercio Electrónico Desarrollada en React
 
 ## Tabla de Contenidos
 
+- [Sitio](#sitio)
 - [Características](#características)
 - [Tecnologias utilizadas](#tecnologiasutilizadas)
 - [Ejecución](#ejecucion)
+
+## Sitio
+
+![GIT](https://drive.google.com/file/d/10WWjuA7cd6Nvg58fBtisf-IQ-AYsblmT/view?usp=sharing)
 
 ## Características
 

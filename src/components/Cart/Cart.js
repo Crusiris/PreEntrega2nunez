@@ -39,13 +39,14 @@ function Cart() {
             </div>
           )}
         </div>
-        <button
-          className="btn__primary w-full items-center justify-center max-w-[200px] mt-12"
-          onClick={handleBuy}
-        >
-          {" "}
-          comprar
-        </button>
+        {cartList.length > 0 && (
+          <button
+            className="btn__primary w-full items-center justify-center max-w-[200px] mt-12"
+            onClick={handleBuy}
+          >
+            comprar
+          </button>
+        )}
       </section>
     </>
   );

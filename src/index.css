@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+   @apply  bg-gray-100;
+}
+
 .header{
     @apply bg-white shadow;
 }
@@ -25,3 +29,4 @@
 .btn__primary{
     @apply flex items-center space-x-1.5 rounded-lg bg-primary-500 px-4 py-1.5 text-white text-base font-medium duration-100 border border-transparent hover:bg-primary-900 focus:ring-offset-2 cursor-pointer;
 }
+

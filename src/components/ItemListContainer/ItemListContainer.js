@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getProducts, getProductsByCategory } from "../../utils";
+import Loading from "../Loading/Loading";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,7 @@ const ItemListContainer = () => {
 
   return (
     <section>
-      {loading ? <p>cargando...</p> : <ItemList products={products} />}
+      {loading ? <Loading /> : <ItemList products={products} />}
     </section>
   );
 };
